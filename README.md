@@ -1,6 +1,15 @@
 # TrayTools
-Welcome! TrayTools is still a work in progress. 🛠️
+Brighten up your system tray with custom icons and shortcuts!
 
-We're nearly ready for release. Planned release date: Jun 2023.⌚
+## Downloads
+Head to the releases page (https://github.com/ThatAdamM/TrayTools/releases) and pick the .zip file for your OS.
+Un-zip and run `TrayTools.exe`!
 
-Check out the releases page to grab the binaries when done!
+## How to use
+**Follow the instructions on the Welcome screen to get started.**
+
+## Build from source code
+1. Clone this repository
+2. Install node.js (and npm if not installed with node.js)
+3. In the terminal, navigate to the folder containing the clone of this repo
+4. Run `npm start` inside the folder to test that it works. A "Welcome To TrayTools" window should pop up.

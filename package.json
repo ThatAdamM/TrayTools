@@ -1,0 +1,20 @@
+{
+  "name": "ssh-client",
+  "version": "1.0.0",
+  "description": "SSH Client for Raspberry Pi",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron . --use-angle=swiftshader"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^22.0.0"
+  },
+  "dependencies": {
+    "electron-packager": "^17.1.1",
+    "get-stream": "^6.0.1",
+    "image-type": "^4.1.0",
+    "pureimage": "^0.3.17"
+  }
+}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to TrayTools!</title>
+    <script src="../bootstrap/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css" />
+    <style>
+        body {
+            overflow-y: hidden;
+            overflow-x: hidden;
+
+            height: calc(312px * 4);
+        }
+
+        section {
+            height: calc(312px - 56px);
+            width: 600px;
+            background-color: #1f2029;
+        }
+        
+        .centre {
+            border-radius: 5px;
+            margin-top: 20px;
+            height: 200px;
+            width: 500px;
+            background-color:#373848;
+            padding: 16px;
+        }
+
+        .mini-col-wrap {
+
+            margin-top: 25px;
+        }
+
+        .button {
+            margin-top: 50px;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .mini-col {
+
+            width: 30%;
+            padding: 5px;
+            text-align: center;
+            background-color:#373848;
+            border-radius: 5px;
+            margin-left: 2px;
+            margin-right: 2px;
+            min-height: 235px;
+        }
+
+        .top-150 {
+            top: 150%;
+        }
+        .top-250 {
+            top: 250%;
+        }
+        .top-350 {
+            top: 350%;
+        }
+        .navGap {
+            height: 56px;
+            background-color: #1f2029;
+        }
+
+        .secTwo {
+            width: 100%;
+        }
+
+        .stepImage {
+            width: 150px;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+        
+        .zero-margin-top {
+            margin-top: 10px;
+        }
+
+        .font-align-left {
+            text-align: left;
+        }
+
+        nav {
+            -webkit-app-region: drag;
+        }
+    </style>
+</head>
+<body>
+    <nav id="one" class="navbar sticky-top text-bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand text-white" href="#">
+            <img src="../logo.png" alt="Logo" height="24" class="d-inline-block align-text-top">
+            TrayTools
+          </a>
+        </div>
+      </nav>
+      <section>
+        <div class="position-absolute top-50 start-50 translate-middle centre text-white text-center">
+            <h3><strong>Welcome to TrayTools!</strong></h3>
+            <p>Press the button below to get started!</p>
+            <a href="#two"><button class="button btn btn-success">Let's Go!</button></a><a href="#three"><button class="button btn btn-outline-success text-white">Skip Tutorial</button></a>
+        </div>
+      </section>
+      <div id="two" class="navGap"></div>
+      <section>
+        <div class="position-absolute top-150 start-50 translate-middle text-white text-center w-100 mini-col-wrap">
+            <div class="col mini-col text-white d-inline-flex">
+                <div>
+                <h3>Step 1:</h3>
+                <p>Right click the TrayTools icon, then "settings"</p>
+                <p style="font-size: 14px;">(It may be hidden. Drag it to the taskbar from the dropdown if so.)</p>
+                <img src="step1.png" width="150px" class="stepImage">
+                </div>
+            </div>
+            <div class="col mini-col text-white d-inline-flex">
+                <div>
+                    <h3>Step 2:</h3>
+                    <p>Edit and save the icon settings.</p>
+                    <img src="step2.png" width="150px" class="stepImage">
+                </div>
+            </div>
+            <div class="col mini-col text-white d-inline-flex">
+                <div>
+                    <h3>Step 3:</h3>
+                    <p>Hit refresh (at the top) to update them!</p>
+                    <img src="step3.png" width="150px" class="stepImage">
+                    <a href="#three"><button class="zero-margin-top btn btn-success">Continue</button></a>
+                </div>
+            </div>
+        </div>
+      </section>
+      <div id="three" class="navGap"></div>
+      <section>
+        <div class="position-absolute top-250 start-50 translate-middle centre text-white text-center">
+            <h4><strong>Choose your preferences:</strong></h4>
+            <form>
+                    <input type="checkbox" class="form-check-input" id="runOnStartup" checked>
+                    <label class="form-check-label font-align-left" for="runOnStartup">Load up TrayTools on login (MacOS and Windows only)</label><br>
+                    <input type="checkbox" class="form-check-input" id="welcomeOnLoad">
+                    <label class="form-check-label font-align-left" for="welcomeOnLoad">Open Welcome Screen when TrayTools is loaded</label>
+                    <br>
+                    <p style="font-size: 14px;">(You can change these later by right-clicking an icon and clicking "Welcome Screen")</p>
+                    <script>
+                        function saveAndCont() {
+                            document.getElementById("runOnStartup").checked == true ? window.process.startup(true) : window.process.startup(false);
+                            document.getElementById("welcomeOnLoad").checked == true ? window.process.welcomeOnLoad(true) : window.process.welcomeOnLoad(false);
+                        }
+                    </script>
+            </form>
+            <a href="#four"><button class="btn btn-success" onclick="saveAndCont()">Save & Continue</button></a>
+        </div>
+      </section>
+      <div id="four" class="navGap"></div>
+      <script>
+
+      </script>
+      <section>
+        <div class="position-absolute top-350 start-50 translate-middle centre text-white text-center">
+            <h3><strong>You're all set-up!</strong></h3>
+            <p>Thanks for using TrayTools!</p>
+            <a href="javascript:close()"><button class="button btn btn-danger">Close</button></a><a href="#"><button class="button btn btn-outline-success text-white">Go back to start</button></a>
+        </div>
+      </section>
+</body>
+</html>

@@ -1,0 +1,307 @@
+@font-face {
+    font-family: hussar;
+    src: url(hussar.woff);
+}
+
+h3 {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    font-family: hussar;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body{
+  
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.4;
+  color: #fff;
+  background-color: #1f2029;
+  overflow-x: hidden;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: 4%;
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 300px;
+}
+
+input[type='checkbox'] {
+    display: none;
+}
+
+#container {
+    max-width: 100vw;
+    position: absolute;
+    left: 16px;
+}
+
+.wrap-collabsible {
+    margin: 1.2rem 0;
+}
+
+.lbl-toggle {
+    display: block;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 1rem;
+    color: #DDD;
+    background: #0069ff;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: all 0.25s ease-out;
+}
+
+.lbl-toggle:hover {
+    color: #FFF;
+}
+
+.lbl-toggle::before {
+    content: ' ';
+    display: inline-block;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid currentColor;
+    vertical-align: middle;
+    margin-right: .7rem;
+    transform: translateY(-2px);
+    transition: transform .2s ease-out;
+}
+
+.toggle:checked+.lbl-toggle::before {
+    transform: rotate(90deg) translateX(-3px);
+}
+
+.collapsible-content {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height .25s ease-in-out;
+}
+
+.toggle:checked+.lbl-toggle+.collapsible-content {
+    max-height: 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999px;
+}
+
+.toggle:checked+.lbl-toggle {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.collapsible-content .content-inner {
+    background: rgba(0, 105, 255, .2);
+    border-bottom: 1px solid rgba(0, 105, 255, .45);
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    padding: .5rem 1rem;
+}
+
+.collapsible-content p {
+    margin-bottom: 0;
+}
+
+.sec-center {
+    top: 16px;
+    right: 16px;
+    position: absolute;
+    max-width: 100%;
+    text-align: right;
+    z-index: 200;
+  }
+  [type="checkbox"]:checked,
+  [type="checkbox"]:not(:checked){
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .dark-light:checked + label,
+  .dark-light:not(:checked) + label{
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    z-index: 20000;
+    display: block;
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    cursor: pointer;
+    transition: all 200ms linear;
+    box-shadow: 0 0 25px rgba(255,235,167,.45);
+  }
+  .dark-light:checked + label{
+    transform: rotate(360deg);
+  }
+  .dark-light:checked + label:after,
+  .dark-light:not(:checked) + label:after{
+    position: absolute;
+    content: '';
+    top: 1px;
+    left: 1px;
+    overflow: hidden;
+    z-index: 2;
+    display: block;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    background-color: #102770;
+    background-image: url('https://assets.codepen.io/1462889/moon.svg');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 200ms linear;
+    opacity: 0;
+  }
+  .dark-light:checked + label:after {
+    opacity: 1;
+  }
+  .dark-light:checked + label:before,
+  .dark-light:not(:checked) + label:before{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 1;
+    display: block;
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    background-color: #48dbfb;
+    background-image: url('https://assets.codepen.io/1462889/sun.svg');
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 200ms linear;
+  }
+  .dark-light:checked + label:before{
+    background-color: #000;
+  }
+  .light-back{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #fff;
+    overflow: hidden;
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg');
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 4%;
+    height: 100%;
+    width: 100%;
+    transition: all 200ms linear;
+    opacity: 0;
+  }
+  .dark-light:checked ~ .light-back{
+    opacity: 1;
+  }
+
+ 
+  .logo {
+      position: fixed;
+      top: 50px;
+      left: 40px;
+      display: block;
+      z-index: 11000000;
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0;
+      transition: all 250ms linear;
+  }
+  .logo:hover {
+    background-color: transparent;
+  }
+  .logo img {
+      height: 26px;
+      width: auto;
+      display: block;
+    transition: all 200ms linear;
+  }
+  .dark-light:checked ~ .logo img{
+    filter: brightness(10%);
+  }
+  
+  @media screen and (max-width: 991px) {
+  .logo {
+      top: 30px;
+      left: 20px;
+  }
+  .dark-light:checked + label,
+  .dark-light:not(:checked) + label{
+    top: 20px;
+    right: 20px;
+  }
+  }
+
+  /* width */
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+    border-radius: 5px;
+  }
+
+  .row {
+    padding-bottom: 10px;
+  }
+
+.divider {
+  display: flex;
+}
+
+.divider::before {
+  content: "";
+  flex: 1;
+}
+.divider::after {
+  content: "";
+  flex: 1;
+}
+
+.line {
+  align-items: center;
+  margin: 1em -1em;
+}
+
+.line::before {
+  height: 1px;
+  margin: 0 1em;
+}
+.line::after {
+  height: 1px;
+  margin: 0 1em;
+}
+
+
+  .one-line::before {
+    background: black;
+  }
+  .one-line::after {
+    background: black;
+  }

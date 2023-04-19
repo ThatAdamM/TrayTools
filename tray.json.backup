@@ -1,0 +1,30 @@
+{
+    "trayIcons": [
+        {
+            "type": "Emoji",
+            "icon": "C:/Users/adaml/Desktop/SSH Client/twemoji/objects/1f9f9.png",
+            "click": "calc.exe",
+            "menu": null,
+            "tooltip": "Welcome to TrayTools!"
+        },
+        {
+            "type": "Emoji",
+            "icon": "C:/Users/adaml/Desktop/SSH Client/twemoji/activities/1f680.png",
+            "click": "calc.exe",
+            "menu": [
+                { "label": "My epik programs", "type": "text"},
+                { "label": "Open Calc", "type": "open", "link": "calc.exe" },
+                { "label": "Open Brave", "type": "open", "link": "brave://newtab " }
+            ],
+            "tooltip": null
+        },
+        {
+            "type": "Image",
+            "icon": "./wave.png",
+            "click": null,
+            "menu": null,
+            "tooltip": null
+        }
+    ],
+    "showStartupMessage": false
+}

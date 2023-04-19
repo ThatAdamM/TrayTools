@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TrayTools Settings</title>
+    <link rel="stylesheet" href="fa/font-awesome-4.7.0/css/font-awesome.min.css">
+    <meta name="description" content="Edit settings for the TrayTools app">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./bootstrap/bootstrap.min.css" rel="stylesheet">
+    <script src="./bootstrap/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h3>TrayTools Settings</h3>
+        <div class="sec-center">	
+            <a href="javascript:window.process.refresh()"><button type="button" class="btn btn-primary">Refresh Tray Icons</button></a>
+            <a href="javascript:newIcon()"><button type="button" class="btn btn-primary">New Icon... </button></a>
+            <ul id="menu" style="color: black;" class="dropdown-menu position-static d-grid gap-1 p-2 rounded-3 mx-0 border-0 shadow w-220px visually-hidden">
+                <li><a class="dropdown-item" id="newiconimg">From Image <i class="fa fa-arrow-right"></i></a></li>
+                <li><a class="dropdown-item" id="newiconemo">From Emoji Folder <i class="fa fa-arrow-right"></i></a></li>
+                <li><a class="dropdown-item" id="newiconana" href="javascript:newIcon('timeanalogue')">From Analogue Clock <i class="fa fa-arrow-right"></i></a></li>
+                <li><a class="dropdown-item" id="newiconcol" href="javascript:newIcon('colour')">From Colour <i class="fa fa-arrow-right"></i></a></li>
+                <li><a class="dropdown-item" id="newiconbla" href="javascript:newIcon('blank')">Blank Icon <i class="fa fa-arrow-right"></i></a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="javascript:window.process.openJSON()">Open the JSON <i class="fa fa-code"></i></a></li>
+              </ul>
+        </div>
+        
+        <div id="container"></div>
+    
+    <script src="./settings.js" async defer></script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "TrayTools (Package)": {
+      "commandName": "MsixPackage",
+      "nativeDebugging": false,
+      "alwaysReinstallApp": true,
+      "hotReloadEnabled": false
+    },
+    "TrayTools (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

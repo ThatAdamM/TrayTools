@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="TrayTools.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TrayTools"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="TrayTools Settings"
+    Closed="Window_Closed"
+    >
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <NavigationView x:Name="NavView" PaneTitle="TrayTools Settings" PaneDisplayMode="Left" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" SelectionChanged="NavSelectionChanged" ItemInvoked="NavigationView_ItemInvoked">
+            <NavigationView.MenuItems>
+                <NavigationViewItemSeparator></NavigationViewItemSeparator>
+                <NavigationViewItemHeader Content="General" />
+                <NavigationViewItem Content="About" Icon="ContactInfo" Tag="about"/>
+                <NavigationViewItem Content="Settings" Icon="Setting" Tag="settings"/>
+                <NavigationViewItemSeparator></NavigationViewItemSeparator>
+                <NavigationViewItemHeader Content="My Icons" />
+                <NavigationViewItem Content="Icon 1" Tag="icon::1">
+                    <NavigationViewItem.Icon>
+                        <ImageIcon Source="Assets/logo.png"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+            </NavigationView.MenuItems>
+            <NavigationView.PaneFooter>
+                <StackPanel Orientation="Vertical">
+                    <NavigationViewItem Tapped="CreateIcon" VerticalAlignment="Bottom" Icon="Add" Content="Create Icon" />
+                    <NavigationViewItem Tapped="RefreshIcons" VerticalAlignment="Bottom" Icon="Refresh" Content="Refresh Icons" />
+                    <NavigationViewItem Tapped="CloseAppButtonNavHandler"  Tag="close" VerticalAlignment="Bottom" Icon="Cancel" Content="Quit TrayTools" />
+                </StackPanel>
+            </NavigationView.PaneFooter>
+            <Frame x:Name="ContentFrame" HorizontalAlignment="Stretch"
+       VerticalAlignment="Stretch"/>
+        </NavigationView>
+
+    </Grid>
+    <Window.SystemBackdrop>
+        <MicaBackdrop Kind="BaseAlt" />
+    </Window.SystemBackdrop>
+</Window>
